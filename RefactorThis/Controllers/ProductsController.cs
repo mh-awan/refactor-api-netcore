@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RefactorThis.Models;
@@ -23,6 +24,14 @@ namespace RefactorThis.Controllers
         {
             var products = await _productService.GetProductsAsync();
             return products;
+        }
+
+
+        [HttpGet("{id}")]
+        public async Task<Product> GetProductByIdAsync(Guid id)
+        {
+            var product = await _productService.GetProductByIdAsync(id);
+            return product;
         }
     }
 }

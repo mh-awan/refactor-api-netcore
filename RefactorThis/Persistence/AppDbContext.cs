@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 using RefactorThis.Models;
 
 namespace RefactorThis.Persistence
@@ -27,7 +25,7 @@ namespace RefactorThis.Persistence
         {
             modelBuilder.Entity<ProductOption>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.Id);
 
                 entity.Property(e => e.Description).HasColumnType("varchar(23)");
 
@@ -40,7 +38,7 @@ namespace RefactorThis.Persistence
 
             modelBuilder.Entity<Product>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.Id);
 
                 entity.Property(e => e.DeliveryPrice).HasColumnType("decimal(4,2)");
 
@@ -51,6 +49,8 @@ namespace RefactorThis.Persistence
                 entity.Property(e => e.Name).HasColumnType("varchar(17)");
 
                 entity.Property(e => e.Price).HasColumnType("decimal(6,2)");
+
+                entity.HasMany(e => e.ProductOptions).WithOne(e => e.Product).HasForeignKey(e => e.ProductId);
             });
 
             OnModelCreatingPartial(modelBuilder);
