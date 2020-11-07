@@ -8,6 +8,7 @@ using RefactorThis.Persistence;
 using RefactorThis.Repositories;
 using RefactorThis.Persistence.Repositories;
 using RefactorThis.Services;
+using AutoMapper;
 
 namespace RefactorThis
 {
@@ -29,6 +30,8 @@ namespace RefactorThis
 
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductService, ProductService>();
+
+            services.AddAutoMapper(typeof(Startup));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
