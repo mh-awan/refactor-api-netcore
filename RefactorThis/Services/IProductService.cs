@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using RefactorThis.Models;
+using RefactorThis.Services.Responses;
 
 namespace RefactorThis.Services
 {
@@ -11,8 +12,8 @@ namespace RefactorThis.Services
     {
         Task<IEnumerable<Product>> GetProductsAsync();
         Task<Product> GetProductByIdAsync(Guid id);
-        //Task<ProductResponse> SaveAsync(Product product);
-        //Task<ProductResponse> UpdateAsync(Guid id, Product product);
-        //Task<ProductResponse> DeleteAsync(Guid id);
+        Task<ProductResponse> SaveProductAsync(Product product);
+        Task<ProductResponse> UpdateProductAsync(Guid id, Product product);
+        Task<ProductResponse> DeleteProductAsync(Guid id);
     }
 }

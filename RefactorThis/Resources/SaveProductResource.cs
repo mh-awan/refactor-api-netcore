@@ -10,12 +10,13 @@ namespace RefactorThis.Resources
         [Required]
         public string Name { get; set; }
 
+        [Required]
         public string Description { get; set; }
 
+        [Required]
         public decimal Price { get; set; }
 
+        [Required]
         public decimal DeliveryPrice { get; set; }
-
-        public IList<ProductOption> ProductOptions { get; set; } = new List<ProductOption>();
     }
 }
