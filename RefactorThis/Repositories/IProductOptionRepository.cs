@@ -8,9 +8,9 @@ namespace RefactorThis.Repositories
     public interface IProductOptionRepository
     {
         Task<IEnumerable<ProductOption>> ListAsync(Guid productId);
-        Task AddAsync(Guid productId, ProductOption productOption);
+        Task AddAsync(ProductOption productOption);
         Task<ProductOption> FindByIdAsync(Guid productId, Guid id);
-        void Update(Guid productId, ProductOption productOption);
-        void Remove(Guid productId, ProductOption productOption);
+        void Update(ProductOption productOption);
+        void Remove(ProductOption productOption);
     }
 }
