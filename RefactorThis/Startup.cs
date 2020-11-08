@@ -29,8 +29,11 @@ namespace RefactorThis
                     Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductOptionRepository, ProductOptionRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductOptionService, ProductOptionService>();
 
             services.AddAutoMapper(typeof(Startup));
         }

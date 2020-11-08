@@ -9,6 +9,7 @@ namespace RefactorThis.Mapping
         public ModelToResourceProfile()
         {
             CreateMap<Product, ProductResource>();
+            CreateMap<ProductOption, ProductOptionResource>();
         }
     }
 }
