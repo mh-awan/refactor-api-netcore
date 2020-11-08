@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using RefactorThis.Models;
@@ -21,6 +22,11 @@ namespace RefactorThis.Persistence.Repositories
         public async Task<Product> FindByIdAsync(Guid id)
         {
             return await _context.Products.FindAsync(id);
+        }
+
+        public async Task<Product> FindByNameAsync(string name)
+        {
+            return await (_context.Products.Where(p => p.Name == name).FirstOrDefaultAsync());
         }
 
         public async Task AddAsync(Product product)

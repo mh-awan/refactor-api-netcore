@@ -12,6 +12,7 @@ namespace RefactorThis.Services
     {
         Task<IEnumerable<Product>> GetProductsAsync();
         Task<Product> GetProductByIdAsync(Guid id);
+        Task<Product> GetProductByNameAsync(string name);
         Task<ProductResponse> SaveProductAsync(Product product);
         Task<ProductResponse> UpdateProductAsync(Guid id, Product product);
         Task<ProductResponse> DeleteProductAsync(Guid id);

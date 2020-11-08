@@ -40,6 +40,14 @@ namespace RefactorThis.Controllers
             return resource;
         }
 
+        [HttpGet("byName")]
+        public async Task<ProductResource> GetProductByName([FromQuery] string name)
+        {
+            var product = await _productService.GetProductByNameAsync(name);
+            var resource = _mapper.Map<Product, ProductResource>(product);
+            return resource;
+        }
+
         [HttpPost]
         public async Task<IActionResult> PostProductAsync([FromBody] SaveProductResource resource)
         {

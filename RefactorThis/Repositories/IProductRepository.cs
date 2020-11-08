@@ -10,6 +10,7 @@ namespace RefactorThis.Repositories
         Task<IEnumerable<Product>> ListAsync();
         Task AddAsync(Product product);
         Task<Product> FindByIdAsync(Guid id);
+        Task<Product> FindByNameAsync(string name);
         void Update(Product product);
         void Remove(Product product);
     }

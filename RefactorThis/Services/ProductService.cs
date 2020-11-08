@@ -28,6 +28,11 @@ namespace RefactorThis.Services
             return await _productRepository.FindByIdAsync(id);
         }
 
+        public async Task<Product> GetProductByNameAsync(string name)
+        {
+            return await _productRepository.FindByNameAsync(name);
+        }
+
         public async Task<ProductResponse> SaveProductAsync(Product product)
         {
             try
