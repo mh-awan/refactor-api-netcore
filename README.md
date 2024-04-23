@@ -1,3 +1,5 @@
+## .NET Core refactoring code challenge
+
 This project is an attempt at refactoring an API by following the usual patterns, tools and conventions employed when developing Web APIs using C# and the .NET Core Framework.
 
 1. `GET /products` - gets all products.
